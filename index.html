@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
@@ -7,6 +7,15 @@ html,body {
 	margin: 0;
 	padding: 0;
 	background: #333;
+	height:100%;
+	width:100%;
+}
+body {
+	display:-webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	text-align:center;
 }
 canvas, #canvas {
 
@@ -16,7 +25,8 @@ canvas, #canvas {
 .wrap {
 	width: 960px;
 	height: 640px;
-
+	margin:auto auto auto auto;
+	-webkit-box-flex: 0;
 }
 #big_skill {
 	position: absolute;
@@ -896,6 +906,7 @@ Laro.register('PD.$loop', function (La) {
 
 
 onload = function () {
+	document.body.addEventListener("mousedown",function(e){e.preventDefault();},false);
 	PD.init('canvas', 960, 640);
 }
 
